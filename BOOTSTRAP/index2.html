@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+      .calculator{
+        width: 250px;
+        height: 300px;
+        text-align: center;
+        margin-top: 100px;
+        padding: 40px;
+        margin: auto;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
+      .calculator_input input{
+        padding: 10px;
+        border:2px solid black;
+        border-radius: 5px;
+        background-color: rgb(252, 245, 245);
+      }
+      .calculator_btns{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 30px;
+
+      }
+      .calculator_btn button{
+        width: 40px;
+        background-color:black;
+        color: white;
+        border:1px solid gray;
+        border-radius: 5px;
+        padding: 10px;
+        margin: 4px;
+        font-size: 20px;
+      }
+      .calculator_result{
+         text-align: center;
+         font-family: sans-serif;
+         color: rgb(0, 38, 0);
+      }
+      h1{
+         text-align: center;
+         margin-top: 10px;
+      }
+      #result{
+        color:grey;
+      }
+
+  </style>
+</head>
+<body>
+         <div class="calculator">
+          <h1>CALCULATOR</h1>
+          <div class="calculator_input">
+            <input type="text" name="" id="num1" onfocus="this.value=''" placeholder="number1" >
+            <br>
+            <br>
+            <input type="text" placeholder="number2" id="num2" onfocus="this.value=''">
+          </div>
+          <div class="calculator_btns"> 
+            <div class="calculator_btn"><button onclick="add()">+</button></div>
+            <div class="calculator_btn"><button onclick="sub()">-</button></div>
+            <div class="calculator_btn"><button onclick="div()">/</button></div>
+            <div class="calculator_btn"><button onclick="clear()">C</button></div>
+            
+          </div>
+          <div class="calculator_result">
+            <h1 id="result">Your Result Display Here</h1>
+          </div>
+        </div>
+  <script>
+    function add(){
+        let a=document.getElementById("num1").value
+        console.log(a)
+        let b=document.getElementById("num2").value
+        console.log(b)
+        console.log(parseInt(a)+parseInt(b))
+        let sum=parseInt(a)+parseInt(b)
+        document.getElementById("result").innerHTML=sum
+    }
+     
+    function sub(){
+        let a=document.getElementById("num1").value
+        console.log(a)
+        let b=document.getElementById("num2").value
+        console.log(b)
+        console.log(parseInt(a)-parseInt(b))
+        let sum=parseInt(a)-parseInt(b)
+        document.getElementById("result").innerHTML=sum
+
+    }
+ 
+    function div(){
+        let a=document.getElementById("num1").value
+        console.log(a)
+        let b=document.getElementById("num2").value
+        console.log(b)
+        console.log(parseInt(a)/parseInt(b))
+        let sum=parseInt(a)/parseInt(b)
+        document.getElementById("result").innerHTML=sum
+
+
+    }
+    function clear(){
+      document.getElementById("num1").value='';
+      document.getElementById("num2").value='';
+  
+    }
+
+  </script>
+
+</body>
+</html>
